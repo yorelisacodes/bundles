@@ -1,0 +1,237 @@
+/* Global Styles */
+body {
+  background-color: #f8f8f8;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Sign Up Page */
+.jumbotron {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin: 20px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="email"],
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+}
+
+.form-signin button {
+  margin-top: 10px;
+  background: #758d35;
+  border: none;
+}
+
+/* Log In Page for EJS */
+.signin-border {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.descrip {
+  text-align: center;
+}
+
+.descrip h1 {
+  margin-top: 0;
+}
+
+.descrip img {
+  max-width: 200px;
+  margin: 20px 0;
+}
+
+/* Index Page */
+.container-lg {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin: 20px;
+  width: 50%;
+  height: 50vh;
+  text-align: center;
+}
+
+.container-lg:first-child {
+  margin-right: 10px;
+}
+
+.container-lg:last-child {
+  margin-left: 10px;
+}
+
+.container-lg h1 {
+  margin-top: 0;
+}
+
+.container-lg img {
+  max-width: 365px;
+  margin-bottom: 20px;
+}
+
+.container-lg p {
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+#homebtn {
+  margin-right: 10px;
+}
+
+/* Other Buttons */
+#fbtn {
+  background-color: #758d35;
+  color: white;
+  border: #758d35;
+  width: 55px;
+}
+
+#signup {
+  background-color: #758d35;
+  color: white;
+  border: #758d35;
+}
+
+#homebtn {
+  background-color: #758d35;
+  color: white;
+  border: #758d35;
+  width: 65px;
+}
+
+#homebtn2 {
+  background-color: #758d35;
+  color: white;
+  border: #758d35;
+  width: 76px;
+}
+
+/* Sign Page Styles */
+.signin-border {
+  border: solid rgba(165, 164, 164, 0.5) 1px;
+  border-radius: 10px;
+  padding: 1rem 4rem;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.18);
+  margin: 10rem auto;
+  width: 60rem;
+  font-size: 1.35rem;
+}
+
+.signup-wrapper {
+  border: solid rgba(165, 164, 164, 0.5) 1px;
+  border-radius: 10px;
+  padding: 1rem 4rem;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.18);
+  margin: 10rem auto;
+  width: 50rem;
+}
+
+/* Navbar CSS */
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1e2b42;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.navbar a {
+  margin-right: auto;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+.nav {
+  padding: 0 2rem;
+}
+
+.choose {
+  margin-left: auto;
+  padding: auto 2rem;
+}
+
+.buttonClass {
+  font-size: 15px;
+  width: 100px;
+  height: 50px;
+  color: #fff;
+  background: rgba(255, 255, 255, 1);
+}
+
+.buttonClass:hover {
+  background: #443c3b;
+}
+
+.containerOne {
+  width: 78rem;
+  border: solid black 1px;
+  display: flex;
+  height: 50vh;
+  justify-content: space-evenly;
+}
+
+.top {
+  width: 20rem;
+  border: solid black 1px;
+  height: 41vh;
+  margin-top: 30px;
+}
+
+.container .text h1 {
+  font-weight: 800;
+}
+
+.container .text p {
+  font-size: 1.5rem;
+}
+
+/* Boxing Sections */

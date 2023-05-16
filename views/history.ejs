@@ -1,0 +1,34 @@
+<%- include('partials/header') -%>
+
+  <div class="containerb">
+    <% for(let i=0; i < history.length; i++){%>
+      <div class="card" class="box">
+        <img class="card-img-top"
+         src="<%= history[i].image%>"
+          alt="">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= history[i].title %>
+          </h5>
+          <p class="card-text">Description: <%= history[i].description %>
+          </p>
+          <p class="card-text">Location: <%= history[i].location %>
+          </p>
+          <p class="card-text">Price Range: $<%= history[i].price %>
+          </p>
+          <p><a href="" class="btn btn-primary">Visit Profile</a></p>
+          <span>
+            <%= history[i].date %>
+          </span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <i data-id="<%= history[i]._id %>" class="fa-regular fa fs-5 fa-heart"></i>
+          </span>
+        </div>
+  
+      </div>
+      <%}%>
+  </div>
+  
+</body>
+
+</html>
