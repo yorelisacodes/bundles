@@ -29,7 +29,7 @@
       </div>
 
       <div class="list-unstyled">
-        <a href="/favorites">Favorites</a>
+        <a href="/cart">Cart</a>
         <a href="#">Chat</a>
         <a href="/logout ">Logout</a>
           <a href=""><%=user.userType %></a>
@@ -39,27 +39,27 @@
 
   </header>
   <div class="containerb">
-    <% for(let i=0; i< favorites.length; i++){%>
+    <% for(let i=0; i< cart.length; i++){%>
       <div class="card" style="width: 25rem;" class="box">
         <img class="card-img-top"
-          src="<%= favorites[i].image %>"
+          src="https://images.unsplash.com/photo-1682685796775-020fd5dcd7d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
           alt="">
         <div class="card-body">
           <h5 class="card-title">
-            <%= favorites[i].title %>
+            <%= cart[i].title %>
           </h5>
-          <p class="card-text">Description: <%= favorites[i].description %>
+          <p class="card-text">Description: <%= cart[i].description %>
           </p>
-          <p class="card-text">Location: <%= favorites[i].location %>
+          <p class="card-text">Location: <%= cart[i].location %>
           </p>
-          <p class="card-text">Price Range: $<%= favorites[i].price %>
+          <p class="card-text">Price Range: $<%= cart[i].price %>
           </p>
           <p><a href="" class="btn btn-primary">Visit Profile</a></p>
           <span>
-            <%= favorites[i].date %>
+            <%= cart[i].date %>
           </span>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            <i data-id="<%= favorites[i]._id %>" class="fa-regular fa fs-5 fa-heart"></i>
+            <i data-id="<%= cart[i]._id %>" class="fa-solid fa fa-cart-shopping"></i>
           </span>
         </div>
   

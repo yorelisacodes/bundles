@@ -69,6 +69,14 @@ module.exports = {
       console.log(err);
     }
   },
+  // getCart: async (req, res) => {
+  //   try {
+  //     const cart = await Post.find({savedBy: req.user.email}).sort({ createdAt: "desc" }).lean();
+  //     res.render("cart.ejs", { cart, user: req.user });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
@@ -121,6 +129,24 @@ module.exports = {
       console.log(err);
     }
   },
+  // addToCart: async (req, res) => {
+  //   console.log(req.params)
+  //   try {
+  //     await Post.findOneAndUpdate(
+  //       { _id: req.params.id },
+  //       {
+  //         $set: { 
+  //           saved: true,
+  //           savedBy: req.user.email
+  //          },
+  //       }
+  //     );
+  //     console.log("we saved the bundle");
+  //     res.redirect(`/profile`);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
   purchaseBundle: async (req, res) => {
     console.log('trying to purchase...')
     console.log(req.params, req.user.id)

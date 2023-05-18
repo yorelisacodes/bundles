@@ -1,10 +1,10 @@
 
 body{
-  background: #94a479;
+  background: #ffffff;
 }
 
 .navbar {
-  background-color: #6f8e30;
+  background-color: #2a7e43;
   border-bottom: 1px solid #ddd;
   padding: 10px;
   display: flex;
@@ -44,9 +44,7 @@ body{
   margin-left: 10px;
 }
 
-.containerb{
-  background: #94a479;
-}
+
 
 .containerb{
   display: flex;
@@ -61,14 +59,14 @@ body > div > div:nth-child(1){
   transform: translateY(-5px);
 }
 .card-body{
-  background: #cfd8c1;
+  background: #7ebd91;
   text-align: center;
 }
 
 /* NAV BAR ON SELLER SIDE */
 
 nav{
-  background-color: #6f8e30;
+  background-color: #2a7e43;
   border-bottom: 1px solid #ddd;
   padding: 10px;
   display: flex;
