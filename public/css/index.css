@@ -41,7 +41,7 @@ body {
 
 .form-signin button {
   margin-top: 10px;
-  background: #758d35;
+  background: #2a7e43;
   border: none;
 }
 
@@ -108,29 +108,29 @@ body {
 
 /* Other Buttons */
 #fbtn {
-  background-color: #758d35;
+  background-color: #2a7e43;
   color: white;
-  border: #758d35;
+  border: #2a7e43;
   width: 55px;
 }
 
 #signup {
-  background-color: #758d35;
+  background-color: #2a7e43;
   color: white;
-  border: #758d35;
+  border: #2a7e43;
 }
 
 #homebtn {
-  background-color: #758d35;
+  background-color: #2a7e43;
   color: white;
-  border: #758d35;
+  border: #2a7e43;
   width: 65px;
 }
 
 #homebtn2 {
-  background-color: #758d35;
+  background-color: #2a7e43;
   color: white;
-  border: #758d35;
+  border: #2a7e43;
   width: 76px;
 }
 

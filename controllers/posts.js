@@ -129,24 +129,24 @@ module.exports = {
       console.log(err);
     }
   },
-  // addToCart: async (req, res) => {
-  //   console.log(req.params)
-  //   try {
-  //     await Post.findOneAndUpdate(
-  //       { _id: req.params.id },
-  //       {
-  //         $set: { 
-  //           saved: true,
-  //           savedBy: req.user.email
-  //          },
-  //       }
-  //     );
-  //     console.log("we saved the bundle");
-  //     res.redirect(`/profile`);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
+  addToCart: async (req, res) => {
+    console.log(req.params)
+    try {
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $set: { 
+            saved: true,
+            savedBy: req.user.email
+           },
+        }
+      );
+      console.log("we saved the bundle");
+      res.redirect(`/profile`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
   purchaseBundle: async (req, res) => {
     console.log('trying to purchase...')
     console.log(req.params, req.user.id)

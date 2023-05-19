@@ -1,33 +1,27 @@
 <%- include('partials/header') -%>
 
-  <div class="containerb">
-    <% for(let i=0; i < history.length; i++){%>
-      <div class="card" class="box">
-        <img class="card-img-top"
-         src="<%= history[i].image%>"
-          alt="">
-        <div class="card-body">
-          <h5 class="card-title">
-            <%= history[i].title %>
-          </h5>
-          <p class="card-text">Description: <%= history[i].description %>
-          </p>
-          <p class="card-text">Location: <%= history[i].location %>
-          </p>
-          <p class="card-text">Price Range: $<%= history[i].price %>
-          </p>
-          <p><a href="" class="btn btn-primary">Visit Profile</a></p>
-          <span>
-            <%= history[i].date %>
-          </span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            <i data-id="<%= history[i]._id %>" class="fa-regular fa fs-5 fa-heart"></i>
-          </span>
+
+
+<div class="containertwo">
+  <div class="row">
+    <% for(var i=0; i<history.length; i++) { %>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="width:20rem;">
+          <img class="card-img-top" src="<%= history[i].image %>" alt="Bundle Image" width="300" height="200">
+          <div class="card-body">
+            <h5 class="card-title"><%= history[i].title %></h5>
+            <p class="card-text"><%= history[i].description %></p>
+            <p class="card-text">Location: <%= history[i].location %></p>
+            <p class="card-text">Price: <%= history[i].price %></p>
+            <a href="/post/<%= history[i]._id %>" class="btn btn-primary">View Details</a>
+            <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </div>
         </div>
-  
       </div>
-      <%}%>
+    <% } %>
   </div>
+</div>
+
   
 </body>
 

@@ -24,8 +24,9 @@
 					<input type="hidden" name="room" value="group">
                     <select name="chatWith">
                         <% for(let i = 0; i < sellers.length; i++){ %>
-                            <option><%= sellers[i].email %></option>
+                            <option><%= seller[i].email %></option>
                         <% } %>
+                     
                     </select>
 				</div>
 				<button type="submit" class="btn">Join chat</button>
