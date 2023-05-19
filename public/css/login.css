@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  background-color: #f8f8f8;
+  background-color: #2a7e43;
 }
 
 .container {
@@ -41,7 +41,7 @@ body {
 
 .form-signin button {
   margin-top: 10px;
-  background: #758d35;
+  background: #2a7e43;
   border: none;
 }
 
@@ -115,27 +115,28 @@ body {
 }
 
 #signup {
-  background-color: #758d35;
+  background-color: #2a7e43;
   color: white;
-  border: #758d35;
+  border:#2a7e43;
 }
 
 #homebtn {
-  background-color: #758d35;
+  background-color: #2a7e43;
   color: white;
-  border: #758d35;
+  border: #2a7e43;
   width: 65px;
 }
 
 #homebtn2 {
-  background-color: #758d35;
+  background-color: #2a7e43;
   color: white;
-  border: #758d35;
+  border: #2a7e43;
   width: 76px;
 }
 
 /* Sign Page Styles */
 .signin-border {
+  background: white;
   border: solid rgba(165, 164, 164, 0.5) 1px;
   border-radius: 10px;
   padding: 1rem 4rem;

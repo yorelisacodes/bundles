@@ -93,6 +93,10 @@ h1 {
     margin: auto;
     margin-top: 30px;
   }
+
+  .containertwo{
+    margin-left: 5%;
+  }
   
   .card{
     width: 30rem;

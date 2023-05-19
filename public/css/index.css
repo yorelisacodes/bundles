@@ -83,15 +83,27 @@ body {
 
 .container-lg:last-child {
   margin-left: 10px;
+  font-size: 1.50rem;
+
 }
 
 .container-lg h1 {
-  margin-top: 0;
+  margin-top: 30px;
 }
-
 .container-lg img {
   max-width: 365px;
   margin-bottom: 20px;
+}
+
+h1{
+  color:#2a7e43;
+}
+
+#signature{
+  font-family: cursive;
+    padding-left: 50%;
+    padding-top: 10%;
+    color: #2a7e43;
 }
 
 .container-lg p {
