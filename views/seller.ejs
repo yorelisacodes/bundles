@@ -28,7 +28,7 @@
       </div>
 
       <div class="list-unstyled">
-        <a href="/getChat">Chat</a>
+        <a href="/getChat/:<%= user.userName%>">Chat</a>
         <a href="/logout ">Logout</a>
         <a href="">
           <%= user.userType %>
@@ -76,7 +76,10 @@
                 <p class="card-text">Location: <%= bundles[i].location %></p>
                 <p class="card-text">Price: <%= bundles[i].price %></p>
                 <a href="/post/<%= bundles[i]._id %>" class="btn btn-primary">View Details</a>
-                <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                <form action="/post/deletePost/<%=bundles._id %>?_method=DELETE" method="POST">
+                  <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                </form>
+                
               </div>
             </div>
           </div>

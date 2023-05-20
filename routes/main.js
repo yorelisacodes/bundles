@@ -12,7 +12,7 @@ router.get("/seller", ensureAuth, postsController.getSellerProfile);
 router.get("/favorites", ensureAuth, postsController.getFavorites);
 router.get("/history", ensureAuth, postsController.getHistory);
 router.get("/startChat", ensureAuth, postsController.startChat);
-router.get("/getChat/:userName", ensureAuth, postsController.getChat);
+router.get("/getChat/:userName", ensureAuth, postsController.getChat); // to get to the chat you need the username.
 router.get("/feed", ensureAuth, postsController.getFeed);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);

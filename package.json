@@ -33,7 +33,7 @@
     "path": "^0.12.7",
     "serverless-websockets-plugin": "^1.0.0",
     "socket.io": "^4.6.1",
-    "stripe": "^12.5.0",
+    "stripe": "^12.6.0",
     "validator": "^13.6.0"
   }
 }
