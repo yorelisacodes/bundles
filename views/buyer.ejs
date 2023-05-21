@@ -32,7 +32,7 @@
         <a href="/favorites">Favorites</a>
         <a href="/getChat/:<%= user.userName%>">Chat</a>
         <a href="/logout ">Logout</a>
-        <a href="/addToCart">Cart</a>
+        <a href="/post/getCart">Cart</a>
         <a href="/history">Purchase History</a>
       </div>
     </nav>
@@ -41,7 +41,10 @@
 
 
   <div class="containerb">
+    <% console.log('cart',bundles,user.cart) %>
     <% for(let i=0; i < bundles.length; i++){%>
+      <% const sId= bundles[i]._id.toString()%>
+      <% if(!user.cart.includes(sId)) {%>
       <div class="card" class="box">
         <img class="card-img-top"
           src="<%= bundles[i].image %>"
@@ -72,7 +75,7 @@
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             <form
             class="col-1"
-            action="/post/saveBundle/<%= bundles[i].id %>?_method=PUT"
+            action="/post/addToCart/<%= bundles[i].id %>?_method=PUT"
             method="POST"
           >
           <button class="noStyle" type="submit">
@@ -82,7 +85,7 @@
               
             </span></button>
             <form   class="col-1"
-            action="/post/saveBundle/<%= bundles[i].id %>?_method=PUT"
+            action="/post/addToCart/<%= bundles[i].id %>?_method=PUT"
             method="POST">
               <button id="carrito" class="noStyle" type="submit">
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -99,7 +102,7 @@
 
       </div>
       <%}%>
-
+      <% } %>
   </div>
 
 

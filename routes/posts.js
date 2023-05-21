@@ -6,16 +6,19 @@ const postsController = require("../controllers/posts");
 const { ensureAuth } = require("../middleware/auth");
 
 //Post Routes - simplified for now
-router.get("/:id", ensureAuth, postsController.getPost);
 
 router.post("/createBundle", upload.single("file"), postsController.createBundle);
 
-router.put("/saveBundle/:id", postsController.saveBundle);
+router.put("/addToCart/:id", postsController.addToCart);
+router.get("/getCart", postsController.getCart);
 router.put("/purchaseBundle/:id", postsController.purchaseBundle);
 
 router.delete("/deletePost/:id", postsController.deletePost);
 
-router.put("/addToCart/:id", postsController.addToCart);
+router.delete("/deleteFromCart/:id",postsController.deleteFromCart)
+
+router.get("/:id", ensureAuth, postsController.getPost);
+
 
 
 
