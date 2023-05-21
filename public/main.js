@@ -1,6 +1,14 @@
 var favorite = document.getElementsByClassName("fa-heart");
 var trash = document.getElementsByClassName("fa-trash");
 
+const buy = document.getElementsByClassName("purchase")
+
+
+buy.addEventListener('click',() => {
+  console.log('buy')
+
+})
+
 Array.from(favorite).forEach(function(element) {
       element.addEventListener('click', function(e){
         const _id = e.target.dataset.id

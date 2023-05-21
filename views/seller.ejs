@@ -75,7 +75,7 @@
                 <p class="card-text"><%= bundles[i].description %></p>
                 <p class="card-text">Location: <%= bundles[i].location %></p>
                 <p class="card-text">Price: <%= bundles[i].price %></p>
-                <a href="/post/<%= bundles[i]._id %>" class="btn btn-primary">View Details</a>
+               
                 <form action="/post/deletePost/<%=bundles._id %>?_method=DELETE" method="POST">
                   <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
                 </form>
