@@ -2,6 +2,9 @@ const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const User = require("../models/User");
 const { sendEmail } = require("../services/nodemailer");
+// STRIPE PAYMENT  =============
+
+const stripe = require("stripe")(process.env.STRIPE_KEY)
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -186,4 +189,61 @@ module.exports = {
       res.redirect("/profile");
     }
   },
+  getSuccess: async (req, res) => {
+    try {
+      res.redirect('/success')
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getCancel: async (req, res) => {
+    try {
+      res.redirect('/cancel')
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+
+
+
+  createCheckoutSession: async (req, res) => {
+    const stripePriceIds = ['price_1NAOMvJfVW8DDLf3fjDPcrrw', "price_1NAOP9JfVW8DDLf3xd1728g1","price_1NAP3KJfVW8DDLf3eVrxZ6gg"]
+    try {
+
+
+      const bundles = await Post.find({ _id: { $in: req.user.cart } });
+  
+      const lineItems = bundles.map((bundle, i) => {
+        console.log(bundle,i)
+        const priceIndex = Math.floor(parseInt(bundle.price.replace('$', '')) / 10) - 1
+        let price
+        if (priceIndex >= stripePriceIds.length) {
+          price = stripePriceIds[stripePriceIds.length - 1]
+        } else {
+          price = stripePriceIds[priceIndex]
+        }
+        return { price: price, quantity: 1 }
+
+      })
+
+      console.log(lineItems)
+      console.log(req.body)
+      const session = await stripe.checkout.sessions.create({
+        line_items: lineItems,
+
+        mode: "payment",
+        success_url: `${process.env.SERVER_URL}/success`,
+        cancel_url: `${process.env.SERVER_URL}/cancel`,
+      });
+
+      res.redirect(303, session.url);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ error: "An error occurred" });
+    }
+  }
+
 };
+
+

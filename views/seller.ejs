@@ -76,8 +76,8 @@
                 <p class="card-text">Location: <%= bundles[i].location %></p>
                 <p class="card-text">Price: <%= bundles[i].price %></p>
                
-                <form action="/post/deletePost/<%=bundles._id %>?_method=DELETE" method="POST">
-                  <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                <form action="/post/deletePost/<%=bundles._id %>?_method=DELETE" >
+                  <span class="delete-icon"><i id="trash" class="fa fa-trash" aria-hidden="true"></i></span>
                 </form>
                 
               </div>
@@ -88,5 +88,5 @@
     </div>
 
 </body>
-
+<script src="/main.js"></script>
 </html>

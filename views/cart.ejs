@@ -54,7 +54,7 @@
           </p>
           <p class="card-text">Price: $<%= cart[i].price %>
           </p>
-          <p><a href="" class="btn btn-primary">Visit Profile</a></p>
+          
           <span>
             <%= cart[i].date %>
           </span>
@@ -72,11 +72,14 @@
       </div>
       <%}%>
 
-   
+      <form action="/post/create-checkout-session" method="POST">
+
+        <button id="purchase">Checkout</button>
+      </form>
   </div>
-  
-  <button class="purchase">Checkout</button>
-  <script src="main.js"></script>
+
+ 
+  <script src="/main.js"></script>
 </body>
 
 </html>
