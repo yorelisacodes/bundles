@@ -8,11 +8,44 @@
 /* Body styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+  background-color: #7ebd91;
+}
+
+.header {
+  background-color: #2a7e43;
+  padding: 10px;
+}
+
+.navbar h1 {
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  color: white;
+}
+.navbar {
+  background-color: #2a7e43;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar a {
+  color: #fafafa;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
 }
 
 /* Chatbot container styles */
@@ -21,6 +54,8 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 400px;
+  margin: 50px auto; /* Center the container horizontally and add margin from the top */
+  padding: 20px;
 }
 
 .join-header {
@@ -29,15 +64,12 @@ body {
   color: #fff;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  text-align: center;
 }
 
 .join-header h1 {
   font-size: 20px;
   margin: 0;
-}
-
-.join-main {
-  padding: 20px;
 }
 
 .form-control {

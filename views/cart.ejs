@@ -24,12 +24,12 @@
       </ul>
       <div class="page-header text-center">
         <h1>
-          <span></span>BundleBazaar
+          <span>BundleBazaar</span>
         </h1>
       </div>
 
       <div class="list-unstyled">
-        <a href="/cart">Cart</a>
+        <a href="/getCart">Cart</a>
         <a href="/getChat/:<%= user.userName%>">Chat</a>
         <a href="/logout ">Logout</a>
           <a href=""><%=user.userType %></a>
@@ -40,7 +40,7 @@
   </header>
   <div class="containerb">
     <% for(let i=0; i< cart.length; i++){%>
-      <div class="card" style="width: 25rem;" class="box">
+      <div id="card" class="card" style="width: 25rem;" class="box">
         <img class="card-img-top"
           src="<%= cart[i].image %>"
           alt="">
@@ -48,16 +48,10 @@
           <h5 class="card-title">
             <%= cart[i].title %>
           </h5>
-          <p class="card-text">Description: <%= cart[i].description %>
-          </p>
-          <p class="card-text">Location: <%= cart[i].location %>
-          </p>
+          
           <p class="card-text">Price: $<%= cart[i].price %>
           </p>
           
-          <span>
-            <%= cart[i].date %>
-          </span>
           <form   class="col-1"
             action="/post/deleteFromCart/<%= cart[i].id %>?_method=DELETE"
             method="POST">
@@ -72,12 +66,14 @@
       </div>
       <%}%>
 
-      <form action="/post/create-checkout-session" method="POST">
-
-        <button id="purchase">Checkout</button>
-      </form>
+     
   </div>
+<div>
+  <form action="/post/create-checkout-session" method="POST">
 
+    <button id="purchase">Checkout</button>
+  </form>
+</div>
  
   <script src="/main.js"></script>
 </body>

@@ -9,7 +9,40 @@
 /* Body styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+  background-color: #7ebd91;
+}
+
+/* NAV BAR */
+.navbar{
+  background-color: #2a7e43;
+  list-style: none;
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar li {
+  margin-right: 10px;
+}
+.navbar h1{
+  color: white;
+  text-shadow: 2px 2px 4px white;
+  
+}
+
+.navbar a {
+  color: #fafafa;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
 }
 
 /* Chatbot container styles */

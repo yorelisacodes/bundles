@@ -82,6 +82,8 @@ module.exports = {
         cart.push(await Post.findById(cartIds[i]))
         console.log('cart3')
 
+        console.log(cartIds)
+
       }
 
       console.log('cart', cart)

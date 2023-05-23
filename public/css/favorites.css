@@ -46,11 +46,11 @@ body{
 
 
 
-.containerb{
+/* .containerb{
   display: flex;
   justify-content: center;
   margin-top: 30px;
-}
+} */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -61,13 +61,31 @@ body{
   flex: 1 1 20rem; /* Adjust the width of the cards as needed */
 }
 
-body > div > div:nth-child(1){
+.containerb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  overflow-x: auto; /* Add horizontal scrollbar if needed */
+  max-height: calc(100vh - 70px); /* Subtract navbar height from viewport height */
+}
+
+.card {
+  margin-right: 35px;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  transform: translateY(-5px);
+  flex: 0 0 25%; /* Set the desired width of each card */
+  max-width: 25%; /* Set the maximum width of each card */
+}
+
+#card{
   margin-right: 35px;
   transition: transform 0.3s ease-in-out;
   text-align: center;
   transform: translateY(-5px);
 }
-.card-body{
+.card-body{ 
   background: #7ebd91;
   text-align: center;
 }

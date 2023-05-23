@@ -4,27 +4,6 @@ var trash = document.getElementsByIdName("trash");
 var buy = document.querySelector("#purchase")
 
 
-buy.addEventListener('click',() => {
-  console.log('buy')
-  // fetch('/create-checkout-session', {
-  //   method:'POST',
-  //   headers: {
-  //       'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify({
-  //     id: _id,
-  //     }),
-  //   })
-  //   .then(response => {
-  //     if (response.ok) return response.json()
-  //     return response.json().then(json => Promise.reject(json))
-  //   })
-  //   .then(({ url }) =>{
-  //       window.location = url
-  //   }).catch(e =>{
-  //       console.error(e.error)
-  //   })
-})
 
 Array.from(favorite).forEach(function(element) {
       element.addEventListener('click', function(e){
@@ -67,5 +46,37 @@ Array.from(trash).forEach(function(element) {
     })
   });
 });
+
+
+
+  // Function to calculate and update the total price
+  function updateTotalPrice() {
+    const cartItems = document.querySelectorAll('#card');
+    let totalPrice = 0;
+    
+    cartItems.forEach((item) => {
+      const priceElement = item.querySelector('.card-text');
+      const price = parseFloat(priceElement.innerText.replace('$', ''));
+      totalPrice += price;
+    });
+
+    const totalPriceElement = document.getElementById('totalPrice');
+    totalPriceElement.innerText = totalPrice.toFixed(2);
+  }
+
+  // Event listener for changes in the cart
+  window.addEventListener('DOMContentLoaded', () => {
+    // Call the updateTotalPrice function initially to set the initial total price
+    updateTotalPrice();
+
+    // Listen for changes in the cart items
+    const cartItems = document.querySelectorAll('#card');
+    cartItems.forEach((item) => {
+      const observer = new MutationObserver(updateTotalPrice);
+      observer.observe(item, { childList: true });
+    });
+  });
+
+
 
 
