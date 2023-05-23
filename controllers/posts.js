@@ -83,15 +83,19 @@ module.exports = {
         console.log('cart3')
 
         console.log(cartIds)
-
       }
 
-      console.log('cart', cart)
-      res.render("cart.ejs", { cart, user: req.user });
+      let total = 0
+      for (let i = 0; i < cart.length; i++) {
+        total += parseFloat(cart[i].price.replace('$', ''))
+      }
+
+      res.render("cart.ejs", { cart, total, user: req.user })
     } catch (err) {
       console.log(err);
     }
   },
+
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
@@ -210,14 +214,14 @@ module.exports = {
 
 
   createCheckoutSession: async (req, res) => {
-    const stripePriceIds = ['price_1NAOMvJfVW8DDLf3fjDPcrrw', "price_1NAOP9JfVW8DDLf3xd1728g1","price_1NAP3KJfVW8DDLf3eVrxZ6gg"]
+    const stripePriceIds = ['price_1NAOMvJfVW8DDLf3fjDPcrrw', "price_1NAOP9JfVW8DDLf3xd1728g1", "price_1NAP3KJfVW8DDLf3eVrxZ6gg"]
     try {
 
 
       const bundles = await Post.find({ _id: { $in: req.user.cart } });
-  
+
       const lineItems = bundles.map((bundle, i) => {
-        console.log(bundle,i)
+        console.log(bundle, i)
         const priceIndex = Math.floor(parseInt(bundle.price.replace('$', '')) / 10) - 1
         let price
         if (priceIndex >= stripePriceIds.length) {
