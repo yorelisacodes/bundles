@@ -130,6 +130,24 @@ module.exports = {
       console.log(err);
     }
   },
+  saveBundle: async (req, res) => {
+    console.log(req.params)
+    try {
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $set: { 
+            saved: true,
+            savedBy: req.user.email
+           },
+        }
+      );
+      console.log("we saved the bundle");
+      res.redirect(`/profile`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 
   addToCart: async (req, res) => {
     console.log(req.params)
@@ -184,12 +202,9 @@ module.exports = {
   deletePost: async (req, res) => {
     try {
       // Find post by id
-      let post = await Post.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      await cloudinary.uploader.destroy(post.cloudinaryId);
-      // Delete post from db
-      await Post.remove({ _id: req.params.id });
-      console.log("Deleted Post");
+     
+      await Post.remove( {_id: req.params.id} );
+     
       res.redirect("/profile");
     } catch (err) {
       res.redirect("/profile");

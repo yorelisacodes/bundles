@@ -13,6 +13,7 @@ router.post("/createBundle", upload.single("file"), postsController.createBundle
 
 router.put("/addToCart/:id", postsController.addToCart);
 router.get("/getCart", postsController.getCart);
+router.put("/saveBundle/:id", postsController.saveBundle);
 router.put("/purchaseBundle/:id", postsController.purchaseBundle);
 
 router.delete("/deletePost/:id", postsController.deletePost);

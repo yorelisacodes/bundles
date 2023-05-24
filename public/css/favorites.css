@@ -105,6 +105,15 @@ nav{
   align-items: center;
 }
 
+#precio{
+  color:white;
+}
+
+#cart1{
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  color: white;
+}
+
 .sellernavbar a:hover{
   background-color: #ddd;
 }
@@ -112,5 +121,20 @@ nav{
 #trash{
   background-color: #7ebd91;
   border: #7ebd91;
+}
+#favorito{
+  background: #2a7e43;
+  border: none;
+  right: -77px;
+  top: 270px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#purchase{
+  background: #7ebd91;
+    color: white;
+    border: none;
+    border-radius: 2px;
 }
 

@@ -8,8 +8,8 @@
     rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
     crossorigin="anonymous" />
   <link rel="stylesheet" href="fontawesome.css">
-  
-  
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="./css/profile.css" />
   <script src="https://kit.fontawesome.com/83e7c78dd8.js" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
       <div class="list-unstyled">
         <a href="/favorites">Favorites</a>
         <a href="/getChat/:<%= user.userName%>">Chat</a>
-        <a href="/logout ">Logout</a>
+        
         <a href="/post/getCart">Cart</a>
-        <a href="/history">Purchase History</a>
+        <a href="/logout ">Logout</a>
       </div>
     </nav>
 
@@ -43,67 +43,58 @@
 
   <div class="containerb">
     <% console.log('cart',bundles,user.cart) %>
-    <% for(let i=0; i < bundles.length; i++){%>
-      <% const sId= bundles[i]._id.toString()%>
-      <% if(!user.cart.includes(sId)) {%>
-      <div class="card" class="box">
-        <img class="card-img-top"
-          src="<%= bundles[i].image %>"
-          alt="">
-        <div class="card-body">
-          <h5 class="card-title"><%= bundles[i].title %></h5>
-          <p class="card-text">Description: <%= bundles[i].description %>
-          </p>
-          <p class="card-text">Location: <%= bundles[i].location %>
-          </p>
-          <p class="card-text">Price Range: $<%= bundles[i].price %>
-          </p>
-          <form
-          class="col-1"
-          action="/post/purchaseBundle/<%= bundles[i].id %>?_method=PUT"
-          method="POST"
-        >
-        <% if(bundles[i].purchasedBy === user.email){ %>
-          <button type="submit">
-            Purchase Bundle
-            </button>
-        <%}%>
-      
-        </form>
-          <span>
-            <%= bundles[i].date %>
-          </span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            <form
-            class="col-1"
-            action="/post/addToCart/<%= bundles[i].id %>?_method=PUT"
-            method="POST"
-          >
-          <button class="noStyle" type="submit">
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              <i class="fa-regular fa fs-5 fa-heart"></i>
-              
-              
-            </span></button>
-            <form   class="col-1"
-            action="/post/addToCart/<%= bundles[i].id %>?_method=PUT"
-            method="POST">
-              <button id="carrito" class="noStyle" type="submit">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  <i  class="fa-solid fa-cart-shopping"></i>
-                  
-                </span></button>
-            </form>
-           
-          
-          
-        </form>
-          </span>
-        </div>
+      <% for(let i=0; i < bundles.length; i++){%>
+        <% const sId=bundles[i]._id.toString()%>
+          <% if(!user.cart.includes(sId)) {%>
+            <div class="card" class="box">
+              <img class="card-img-top" src="<%= bundles[i].image %>" alt="">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= bundles[i].title %>
+                </h5>
+                <p class="card-text">Description: <%= bundles[i].description %>
+                </p>
+                <p class="card-text">Location: <%= bundles[i].location %>
+                </p>
+                <p class="card-text">Price Range: $<%= bundles[i].price %>
+                </p>
+                <form class="col-1" action="/post/purchaseBundle/<%= bundles[i].id %>?_method=PUT" method="POST">
+                  <% if(bundles[i].purchasedBy===user.email){ %>
+                    <button type="submit">
+                      Purchase Bundle
+                    </button>
+                    <%}%>
 
-      </div>
-      <%}%>
-      <% } %>
+                </form>
+                <span>
+                  <%= bundles[i].date %>
+                </span>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  <form class="col-1" action="/post/saveBundle/<%= bundles[i].id %>?_method=PUT" method="POST">
+                    <button class="noStyle" type="submit">
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <i class="fa-regular fa fs-5 fa-heart"></i>
+
+
+                      </span></button>
+                    </form>
+                    <form class="col-1" action="/post/addToCart/<%= bundles[i].id %>?_method=PUT" method="POST">
+                      <button id="carrito" class="noStyle" type="submit">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          <i class="fa-solid fa-cart-shopping"></i>
+
+                        </span></button>
+                    </form>
+
+
+
+                  
+                </span>
+              </div>
+
+            </div>
+            <%}%>
+              <% } %>
   </div>
 
 

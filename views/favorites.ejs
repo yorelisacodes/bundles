@@ -54,10 +54,8 @@
           </p>
           <p class="card-text">Price: $<%= favorites[i].price %>
           </p>
-          <p><a href="" class="btn btn-primary">Visit Profile</a></p>
-          <span>
-            <%= favorites[i].date %>
-          </span>
+          <p><a href="/getChat/:<%= user.userName%>" class="btn btn-primary" id="favorito">Negotiate</a></p>
+          
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             <i data-id="<%= favorites[i]._id %>" class="fa-regular fa fs-5 fa-heart"></i>
           </span>

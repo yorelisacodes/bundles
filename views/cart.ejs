@@ -23,7 +23,7 @@
         <li><a href="/profile">Home</a></li>
       </ul>
       <div class="page-header text-center">
-        <h1>
+        <h1 id="cart1">
           <span>BundleBazaar</span>
         </h1>
       </div>
@@ -35,9 +35,16 @@
           <a href=""><%=user.userType %></a>
 
       </div>
+      <div>
+        <form action="/post/create-checkout-session" method="POST" style="display: flex; align-items: center;">
+          <button id="purchase">Checkout</button>
+          <p id="precio" style="margin-left: 10px;">Total: $<span id="totalPrice"><%= total %></span></p>
+        </form>
+      </div>
     </nav>
 
   </header>
+ 
   <div class="containerb">
     <% for(let i=0; i< cart.length; i++){%>
       <div id="card" class="card" style="width: 25rem;" class="box">
@@ -68,12 +75,7 @@
 
      
   </div>
-  <div>
-    <form action="/post/create-checkout-session" method="POST">
-      <p>Total Price: $<span id="totalPrice"><%= total %></span></p>
-      <button id="purchase">Checkout</button>
-    </form>
-  </div>
+
  
   <script src="/main.js"></script>
 </body>

@@ -177,4 +177,17 @@ form {
 
 
 
-/* CHATHOME */
+/* CART */
+
+body > div:nth-child(3) > form{
+  
+  border: 1px solid black ;
+  margin-right: 76%;
+  height: 23%;
+  margin-left: 2%;
+}
+
+#purchase{
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
